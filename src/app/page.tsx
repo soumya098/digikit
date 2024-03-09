@@ -1,6 +1,6 @@
 import Wrapper from '@/components/Wrapper';
 import { Button, buttonVariants } from '@/components/ui/button';
-import { Perks } from '@/constants';
+import { PERKS } from '@/constants';
 import Link from 'next/link';
 
 export default function Home() {
@@ -29,7 +29,7 @@ export default function Home() {
 			<section className='border-t border-gray-200 bg-gray-100'>
 				<Wrapper className='py-20'>
 					<div className='grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-0'>
-						{Perks.map((perk) => (
+						{PERKS.map((perk) => (
 							<div key={perk.name} className='text-center md:flex md:items-start md:text-left lg:block lg:text-center'>
 								<div className='flex justify-center md:shrink-0'>
 									<div className='flex size-16 items-center justify-center rounded-full bg-background text-primary'>

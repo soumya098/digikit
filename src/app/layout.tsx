@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import React from 'react';
+import Navbar from '@/components/nav/Navbar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -15,7 +16,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 	return (
 		<html lang='en' className='h-full'>
 			<body className={cn('relative antialiased font-sans', inter.className)}>
-				<main className='relative flex min-h-screen flex-col'>{children}</main>
+				<main className='relative flex min-h-screen flex-col'>
+					<Navbar />
+					{children}
+				</main>
 			</body>
 		</html>
 	);
