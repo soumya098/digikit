@@ -10,6 +10,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { CredentialValidatorSchema, TCredentialValidatorSchema } from '@/lib/validators';
+import { trpc } from '@/trpc/client';
 
 const SignUp = () => {
 	const {
@@ -28,6 +29,9 @@ const SignUp = () => {
 	const onBlurHandler = async () => {
 		await trigger('email');
 	};
+
+	const { data } = trpc.anyRoute.useQuery();
+	console.log(data);
 
 	const onSubmit = (values: TCredentialValidatorSchema) => {
 		console.log(values);
